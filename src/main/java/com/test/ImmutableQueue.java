@@ -6,9 +6,10 @@ import java.util.NoSuchElementException;
 public class ImmutableQueue<T> implements Queue<T> {
 
     private ArrayList<T> list;
+    private static ArrayList<?> EMPTY = new ArrayList<>();
 
     public ImmutableQueue() {
-        list = new ArrayList<T>();
+        list = (ArrayList<T>) EMPTY;
     }
 
     private ImmutableQueue(ArrayList<T> t) {
